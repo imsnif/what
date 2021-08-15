@@ -133,7 +133,7 @@ where
             .draw(|mut frame| {
                 let size = frame.size();
                 let total_bandwidth = HeaderDetails {
-                    state: &state,
+                    state,
                     elapsed_time,
                     paused,
                 };

@@ -153,7 +153,7 @@ pub fn get_input(
     dns_server: &Option<Ipv4Addr>,
 ) -> Result<OsInputOutput, failure::Error> {
     let network_interfaces = if let Some(name) = interface_name {
-        match get_interface(&name) {
+        match get_interface(name) {
             Some(interface) => vec![interface],
             None => {
                 failure::bail!("Cannot find interface {}", name);

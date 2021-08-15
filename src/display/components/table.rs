@@ -96,8 +96,8 @@ impl<'a> Table<'a> {
             .map(|(connection, connection_data)| {
                 vec![
                     display_connection_string(
-                        &connection,
-                        &ip_to_host,
+                        connection,
+                        ip_to_host,
                         &connection_data.interface_name,
                     ),
                     connection_data.process_name.to_string(),
@@ -201,7 +201,7 @@ impl<'a> Table<'a> {
             .remote_addresses
             .iter()
             .map(|(remote_address, data_for_remote_address)| {
-                let remote_address = display_ip_or_host(*remote_address, &ip_to_host);
+                let remote_address = display_ip_or_host(*remote_address, ip_to_host);
                 vec![
                     remote_address,
                     data_for_remote_address.connection_count.to_string(),
