@@ -6,6 +6,7 @@ mod network;
 mod os;
 #[cfg(test)]
 mod tests;
+mod threading;
 
 use std::{
     collections::HashMap,
@@ -36,7 +37,7 @@ use simplelog::WriteLogger;
 use crate::cli::Opt;
 use crate::os::ProcessInfo;
 
-const DISPLAY_DELTA: Duration = Duration::from_millis(1000);
+const UPDATE_RATE: Duration = Duration::from_millis(1000);
 
 fn main() -> eyre::Result<()> {
     let opts = Opt::parse();
@@ -156,8 +157,8 @@ where
                         }
                     }
                     let render_duration = render_start_time.elapsed();
-                    if render_duration < DISPLAY_DELTA {
-                        park_timeout(DISPLAY_DELTA - render_duration);
+                    if render_duration < UPDATE_RATE {
+                        park_timeout(UPDATE_RATE - render_duration);
                     }
                 }
                 if !raw_mode {
