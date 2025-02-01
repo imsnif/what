@@ -26,24 +26,24 @@ default = []
 ui_test = []
 
 [dependencies]
-async-trait = "0.1.83"
+async-trait = "0.1.85"
 chrono = "0.4"
 clap-verbosity-flag = "3.0.2"
-clap = { version = "4.5.23", features = ["derive"] }
+clap = { version = "4.5.27", features = ["derive"] }
 crossterm = "0.28.1"
 derive_more = { version = "1.0.0", features = ["debug"] }
 eyre = "0.6.12"
-ipnetwork = "0.20.0"
+ipnetwork = "0.21.1"
 itertools = "0.14.0"
-log = "0.4.22"
+log = "0.4.25"
 once_cell = "1.20.2"
 pnet = "0.35.0"
 pnet_macros_support = "0.35.0"
 ratatui = "0.29.0"
 resolv-conf = "0.7.0"
 simplelog = "0.12.2"
-thiserror = "2.0.9"
-tokio = { version = "1.42", features = ["rt", "sync"] }
+thiserror = "2.0.11"
+tokio = { version = "1.43", features = ["rt", "sync"] }
 trust-dns-resolver = "0.23.2"
 unicode-width = "0.2.0"
 strum = { version = "0.26.3", features = ["derive"] }
@@ -60,17 +60,17 @@ netstat2 = "0.11.1"
 sysinfo = "0.33.1"
 
 [dev-dependencies]
-insta = "1.41.1"
+insta = "1.42.1"
 packet-builder = { version = "0.7.0", git = "https://github.com/cyqsimon/packet_builder.git", branch = "patch-pnet-0.35" }
 pnet_base = "0.35.0"
 regex = "1.11.1"
-rstest = "0.23.0"
+rstest = "0.24.0"
 
 [build-dependencies]
-clap = { version = "4.5.23", features = ["derive"] }
+clap = { version = "4.5.27", features = ["derive"] }
 clap-verbosity-flag = "3.0.2"
-clap_complete = "4.5.40"
-clap_mangen = "0.2.24"
+clap_complete = "4.5.44"
+clap_mangen = "0.2.26"
 derive_more = { version = "1.0.0", features = ["debug"] }
 eyre = "0.6.12"
 strum = { version = "0.26.3", features = ["derive"] }
